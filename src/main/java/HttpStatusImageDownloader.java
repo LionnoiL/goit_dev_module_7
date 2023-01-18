@@ -2,7 +2,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class HttpStatusImageDownloader {
-
     public void downloadStatusImage(int code) {
         String imageUrl = new HttpStatusChecker().getStatusImage(code);
         byte[] bytes = HttpUtils.getRequestBody(imageUrl);
@@ -15,7 +14,5 @@ public class HttpStatusImageDownloader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 }

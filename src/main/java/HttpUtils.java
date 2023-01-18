@@ -13,7 +13,6 @@ public class HttpUtils {
     }
 
     public static int getRequestStatus(String url) {
-
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpUriRequest request = new HttpGet(url);
             HttpResponse response = httpClient.execute(request);
@@ -21,11 +20,9 @@ public class HttpUtils {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static byte[] getRequestBody(String url) {
-
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpUriRequest request = new HttpGet(url);
             HttpResponse response = httpClient.execute(request);
@@ -33,6 +30,5 @@ public class HttpUtils {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

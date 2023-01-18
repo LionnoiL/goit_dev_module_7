@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
 public class HttpImageStatusCli {
-
     private final String ENTER_CODE_MESSAGE = "Enter HTTP status code or 'exit' -> ";
     private final String ENTER_VALID_CODE_MESSAGE = "Please enter valid number -> ";
     private final String NOT_IMAGE_MESSAGE = "There is not image for HTTP status ";
 
     public void askStatus() {
-
         Scanner scanner = new Scanner(System.in);
         HttpStatusImageDownloader downloader = new HttpStatusImageDownloader();
         int code = 0;
@@ -38,8 +36,6 @@ public class HttpImageStatusCli {
                 System.out.print(ENTER_CODE_MESSAGE);
             }
         }
-
         scanner.close();
     }
-
 }
