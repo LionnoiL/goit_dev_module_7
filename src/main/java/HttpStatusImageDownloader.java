@@ -4,12 +4,8 @@ import java.io.IOException;
 public class HttpStatusImageDownloader {
 
     public void downloadStatusImage(int code) {
-        String status = new HttpStatusChecker().getStatusImage(code);
-        if (status.equals("404")) {
-            throw new RuntimeException("Image not found");
-        }
-
-        byte[] bytes = HttpUtils.getRequestBody("https://http.cat" + "/" + code + ".jpg");
+        String imageUrl = new HttpStatusChecker().getStatusImage(code);
+        byte[] bytes = HttpUtils.getRequestBody(imageUrl);
 
         FileOutputStream fos = null;
         try {

@@ -7,7 +7,7 @@ public class HttpStatusChecker {
         int statusCode = HttpUtils.getRequestStatus(url);
 
         if (statusCode == -1 || statusCode == 404) {
-            return "404";
+            throw new RuntimeException("Image not found");
         } else {
             return url;
         }
